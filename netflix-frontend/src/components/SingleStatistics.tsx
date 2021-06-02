@@ -40,7 +40,7 @@ const SingleStatistics: React.FC<StatisticsProps> = ({ routeSearch }) => {
     try {
       console.log(route);
       const numCountry: AxiosResponse<any> = await axios.get(
-        'http://netflix-webapp-adb-2021.herokuapp.com/statistics/' + route,
+        '//netflix-webapp-adb-2021.herokuapp.com/statistics/' + route,
       );
       console.log(numCountry.data);
       return numCountry;
