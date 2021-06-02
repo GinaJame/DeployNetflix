@@ -24,7 +24,8 @@ router.get('/general', (req, res) => {
         labels.push(d._id);
       });
       let response = {
-        series
+        series,
+        labels
       };
       res.json(response);
     })

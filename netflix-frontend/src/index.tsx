@@ -6,11 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import LandingPage from "./views/LandingPage";
 
 const App: React.FC = () => (
-  <Router basename="/">
-    <Switch>
-      <Route exact path="/" component={LandingPage} />
-    </Switch>
-  </Router>
+  <LandingPage/>
 );
 
 ReactDOM.render(
