@@ -151,7 +151,6 @@ const ListView: React.FC<ListProps> = ({ routeSearch }) => {
           );
         } else {
           data = await axios.get('//netflix-webapp-adb-2021.herokuapp.com/statistics/list/' + finalRoute, {
-
             params: {
               skip: skip,
               limit: limit,
