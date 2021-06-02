@@ -38,7 +38,7 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
     const getData = async (): Promise<AxiosResponse<any>> => {
       try {
         const todos: AxiosResponse<any> = await axios.get(
-          'http://netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute,
+          '//netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute,
         );
         setInfo(todos.data);
         console.log(todos.data);
@@ -51,6 +51,7 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
   }, [finalRoute]);
 
   useEffect(() => {
+    
     const fetchData = async () => {
       if (chart) {
         await chart.destroy();
@@ -157,7 +158,9 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
       }
       await chart.render();
     };
-    fetchData();
+    if(info!==undefined){
+      fetchData();
+    }
   }, [info]);
   return (
     <div css={chartCss}>
