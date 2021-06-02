@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "ts-node index.ts",
     "tsc": "tsc",
-    "build": "cd netflix-frontend && yarn run build",
+    "build": "cd netflix-frontend && yarn build",
     "install-client": "cd netflix-frontend && yarn install",
-    "heroku-postbuild": "yarn run install-client && yarn run build",
+    "heroku-postbuild": "yarn run install-client && yarn build",
     "server": "nodemon --exec ts-node index.ts",
     "develop": "yarn run dev",
     "start": "yarn run dev"
