@@ -10,8 +10,8 @@
     "install-client": "cd netflix-frontend && yarn install",
     "heroku-postbuild": "yarn run install-client && yarn run build",
     "server": "nodemon --exec ts-node index.ts",
-    "develop": "yarn run dev",
-    "start": "yarn run dev"
+    "develop": "yarn run server",
+    "start": "yarn run server"
   },
   "dependencies": {
     "@types/cors": "^2.8.10",
