@@ -38,7 +38,7 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
     const getData = async (): Promise<AxiosResponse<any>> => {
       try {
         const todos: AxiosResponse<any> = await axios.get(
-          'http://localhost:5000/statistics/' + finalRoute,
+          'http:/netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute,
         );
         setInfo(todos.data);
         return todos;
