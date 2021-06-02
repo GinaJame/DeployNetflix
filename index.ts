@@ -24,13 +24,11 @@ const connection = mongoose.connection;
 
 connection.once('open', () => {
   console.log('MongoDB database connection established successfully');
-});
-const dataRouter = listRouter;
-const statisticsRouter = routerStatistics;
-const searchRouter = searchInfoRouter;
-app.use('/list', dataRouter);
-app.use('/statistics', statisticsRouter);
-app.use('/search', searchRouter);
+})
+
+app.use('/list',listRouter);
+app.use('/statistics', routerStatistics);
+app.use('/search', searchInfoRouter);
 app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./netflix-frontend/build", "index.html"));
 });
