@@ -24,11 +24,7 @@ router.get('/general', (req, res) => {
         labels.push(d._id);
       });
       let response = {
-        series,
-        labels,
-        chart: {
-          type: 'pie',
-        },
+        series
       };
       res.json(response);
     })

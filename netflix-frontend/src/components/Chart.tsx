@@ -38,9 +38,10 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
     const getData = async (): Promise<AxiosResponse<any>> => {
       try {
         const todos: AxiosResponse<any> = await axios.get(
-          'http:/netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute,
+          'http://netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute,
         );
         setInfo(todos.data);
+        console.log(todos.data);
         return todos;
       } catch (error) {
         throw new Error(error);
@@ -130,7 +131,7 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
             },
           },
         });
-      } else {
+      } else  {
         chart = new ApexCharts(document.querySelector('#chart'), {
           series: info.series,
           chart: {
