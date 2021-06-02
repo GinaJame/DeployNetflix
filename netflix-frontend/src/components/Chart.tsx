@@ -37,9 +37,9 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
   useEffect(() => {
     const getData = async (): Promise<AxiosResponse<any>> => {
       try {
-        console.log('//netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute);
+        console.log('https://netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute);
         const todos: AxiosResponse<any> = await axios.get(
-          '//netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute,
+          'https://netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute,
         );
         setInfo(todos.data);
         console.log(todos.data);
@@ -56,6 +56,7 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
       if (chart) {
         await chart.destroy();
       }
+      console.log('https://netflix-webapp-adb-2021.herokuapp.com/statistics/' + finalRoute);
       if (finalRoute === 'country') {
         chart = new ApexCharts(document.querySelector('#chart'), {
           series: [
@@ -164,6 +165,7 @@ const Chart: React.FC<StatisticsProps> = ({ routeSearch }) => {
   }, [info]);
   return (
     <div css={chartCss}>
+      {console.log("aiuda")}
       <div id='chart' css={chartc}></div>
     </div>
   );
